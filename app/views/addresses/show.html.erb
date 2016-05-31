@@ -12,3 +12,6 @@
 
 <span>Zip code:</span>
 <span><%= @address.zip %></span>
+
+<%= link_to 'Edit', edit_seller_house_address_path(@seller, @house, @address) %>
+<%= link_to 'Back', seller_house_addresses_path %>

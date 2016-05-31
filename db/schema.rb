@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160531024414) do
     t.string   "state"
     t.string   "country"
     t.integer  "zip"
+    t.integer  "house_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,12 +31,13 @@ ActiveRecord::Schema.define(version: 20160531024414) do
     t.integer  "year_built"
     t.integer  "bed"
     t.integer  "bath"
+    t.integer  "seller_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "sellers", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.string   "info"
     t.integer  "rating"
     t.datetime "created_at", null: false

@@ -12,3 +12,10 @@
 
 <span>Bath:</span>
 <span><%= @house.bath %></span>
+
+
+<%= link_to 'Edit', edit_seller_house_path(@seller, @house) %>
+<%= link_to 'Delete', seller_house_path(@seller, @house), method: :delete, data: { confirm: 'Really Delete?'}%>
+<%= link_to 'All Houses', seller_houses_path %>
+
+<%= link_to 'address', seller_house_addresses_path(@seller, @house, @address) %>

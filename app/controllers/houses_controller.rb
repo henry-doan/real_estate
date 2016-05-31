@@ -1,8 +1,8 @@
 class HousesController < ApplicationController
   before_action :seller
-  before_action :house, only: [:show, :edit, :update, :destroy]
+  before_action :house, only: [:show, :edit, :update]
 
-  def index
+  def index 
   	@houses = House.all
   end
 
@@ -14,10 +14,9 @@ class HousesController < ApplicationController
   end
 
   def create
-  	#TODO resolve the conflict that happens here
   	@house = @seller.houses.new(house_params)
   	if @house.save
-  		redirect_to seller_house_path(@seller, @house)
+  		redirect_to seller_houses_path(@seller, @house)
   	else
   		render :new
   	end
@@ -35,8 +34,9 @@ class HousesController < ApplicationController
   end
 
   def destroy
+    @house = House.find(params[:id])
   	@house.destroy
-  	redirect_to seller_house_path(@seller)
+  	redirect_to seller_houses_path(@seller)
   end
 
   private

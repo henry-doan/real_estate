@@ -1,3 +1,4 @@
 class House < ActiveRecord::Base
-	belongs_to :seller, dependent: :destroy
+	belongs_to :seller
+	has_one :address
 end
