@@ -1,0 +1,11 @@
+<%= form_for @seller do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :info %>
+	<%= f.text_area :info %>
+
+	<%= f.label :rating %>
+	<%= f.text_field :rating %>
+	<%= f.submit %>
+<% end %>
