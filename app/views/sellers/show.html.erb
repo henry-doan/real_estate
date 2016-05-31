@@ -4,6 +4,8 @@
 <p>Info: <%= @seller.info %> </p>
 <p>Rating: <%= @seller.rating %> </p>
 
+<%= link_to 'Houses for sale', seller_houses_path(@seller) %>
+
 <hr />
 
 <%= link_to 'Edit', edit_seller_path(@seller) %>

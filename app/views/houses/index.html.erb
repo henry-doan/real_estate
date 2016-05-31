@@ -1,0 +1,20 @@
+<h1><%= @seller.name %> Houses</h1>
+<hr />
+
+<% if @houses.any? %>
+	<ul>
+		<% @houses.each do |house| %>
+			<li>
+				<%= link_to house.size, seller_house_path(@seller, house) %>
+			</li>
+		<% end %>
+	</ul>
+<% else %>
+	<h2>No houses are for sale, please list one.</h2>
+<% end %>
+
+<%= link_to 'Address', address_path(@seller, @house, @address) %>
+<hr />
+
+<%= link_to 'New House listings', new_seller_house_path(@seller) %>
+<%=link_to 'Back to seller page', seller_path(@seller) %>

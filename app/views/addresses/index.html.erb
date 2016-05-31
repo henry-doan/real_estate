@@ -1,0 +1,19 @@
+<h1>Address</h1>
+<hr />
+
+<% if @address.any? %>
+	<ul>
+		<% @address.each do |address| %>
+			<li>
+				<%= link_to address.street, address_path(@address) %>
+			</li>
+		<% end %>
+	</ul>
+<% else %>
+	<h2>No address listed, please list one.</h2>
+<% end %>
+
+<hr />
+
+<%= link_to 'New address', new_address_path(@address) %>
+<%=link_to 'Back to house page', seller_house_path(@address) %>

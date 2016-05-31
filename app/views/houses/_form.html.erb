@@ -1,0 +1,16 @@
+<%= form_for [@seller, @house] do |f| %>
+
+	<%= f.label :size %>
+	<%= f.text_field :size %>
+
+	<%= f.label :year_built %>
+	<%= f.select :year_built, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %>
+
+	<%= f.label :bed %>
+	<%= f.select :bed, [1,2,3,4,5,6,7,8,9,10] %>
+
+	<%= f.label :bath %>
+	<%= f.select :bath, [1,2,3,4,5,6,7,8,9,10] %>
+
+	<%= f.submit %>
+<% end %>
