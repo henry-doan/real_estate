@@ -1,4 +1,4 @@
-<h1><%= @seller.name %> Houses</h1>
+<h1>All <%= @seller.name %> Houses Listings</h1>
 <hr />
 
 <% if @houses.any? %>
@@ -16,5 +16,5 @@
 
 <hr />
 
-<%= link_to 'New House listings', new_seller_house_path(@seller) %>
-<%=link_to 'Back to seller page', seller_path(@seller) %>
+<%= link_to 'New House Listings', new_seller_house_path(@seller), class: 'btn btn-default' %>
+<%=link_to 'Back to Seller Sage', seller_path(@seller), class: 'btn btn-default' %>
